@@ -1,134 +1,86 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import entity.Pair;
+import entity.Person;
+import entity.Phone;
+import entity.Student;
 
 public class Main {
     public static void main(String[] args) {
-        homeWork1();
-        homeWork2();
+//        homeWork1();
+//        homeWork2();
+        homeWork3();
     }
 
-    public static void hw1Ex1() {
-        int myInt = 12312;
-        int count = String.valueOf(myInt).length();
+    // =================================================================== HW3 ===
 
-        if (myInt < 0) {
-            System.out.println("hw1=============Ex1:\n" + "This number has" + count + "digits and is negative");
-        } else {
-            System.out.println("hw1=============Ex1:\n" + "This number has " + count + " digits and is positive");
-        }
+    public static void homeWork3() {
+        hw3Person();
+        hw3Pair();
+        hw3Calculator();
+        hw3Student();
     }
 
-    public static void hw1Ex2() {
-        int a = 0;
-        int b = 0;
-        int c = 0;
-
-        if ((a + b) > c) {
-            System.out.println("hw1=============Ex2:\n" + "Triangle exists");
-        } else if ((a + c) > b) {
-            System.out.println("hw1=============Ex2:\n" + "Triangle exists");
-        } else if ((b + c) > a) {
-            System.out.println("hw1=============Ex2:\n" + "Triangle exists");
-        } else {
-            System.out.println("hw1=============Ex2:\n" + "Triangle does not exist");
-        }
+    public static void hw3Student() {
+        System.out.println("hw3=============Student:");
+        Student mike = new Student("Mike",2);
+        Student nike = new Student("Nike",2);
+        Student sam = new Student("Sam",2);
+        Student[] students = new Student[3];
+        students[0] = mike;
+        students[1] = nike;
+        students[2] = sam;
     }
 
-    public static void hw1Ex3() {
-        int someInt = 2;
-
-        if (someInt > 0) {
-            someInt += 1;
-        } else if (someInt < 0) {
-            someInt -= 2;
-        } else if (someInt == 0) {
-            someInt = 10;
-        }
-        System.out.println("hw1=============Ex3:\n" + someInt);
+    public static void hw3Calculator() {
+        System.out.println("hw3=============Calculator:");
+        Phone myPhone = new Phone("iPhoneSE", "+375294570048");
+        myPhone.myCalculator.doAddition(2,2);
+        myPhone.myCalculator.doSubtraction(2,2);
+        myPhone.myCalculator.doMultiplication(2,2);
+        myPhone.myCalculator.doDivision(4,2);
+        myPhone.myCalculator.doNumberToPower(2,2);
+        myPhone.myCalculator.isEvenNumber(13);
     }
 
-    public static void hw1Ex4() {
-        int a = -1;
-        int b = 0;
-        int c = 2;
-        int countPositiveNumbers = 0;
-
-        if (a >= 0) {
-            countPositiveNumbers += 1;
-        }
-        if (b >= 0) {
-            countPositiveNumbers += 1;
-        }
-        if (c >= 0) {
-            countPositiveNumbers += 1;
-        }
-        System.out.println("hw1=============Ex4:\n" + countPositiveNumbers);
+    public static void hw3Pair() {
+        System.out.println("hw3=============Pair:");
+        Pair pair = new Pair();
+        pair.printValues();
+        pair.sum();
+        pair.bestValue();
+        pair.changeValues(11,9);
+        pair.sum();
+        pair.bestValue();
     }
 
-    public static void hw1Ex5() {
-        int a = -1;
-        int b = 0;
-        int c = 2;
-        int countPositiveNumbers = 0;
-        int countNegativeNumbers = 0;
-
-        if (a >= 0) {
-            countPositiveNumbers += 1;
-        } else {
-            countNegativeNumbers += 1;
-        }
-        if (b >= 0) {
-            countPositiveNumbers += 1;
-        } else {
-            countNegativeNumbers += 1;
-        }
-        if (c >= 0) {
-            countPositiveNumbers += 1;
-        } else {
-            countNegativeNumbers += 1;
-        }
-        System.out.println("hw1=============Ex5:\n" + "PositiveNumbersCount - " + countPositiveNumbers);
-        System.out.println("NegativeNumbersCount - " + countNegativeNumbers);
-    }
-
-    public static void hw1Ex6() {
-        int a = 1;
-        int b = 2;
-
-        if (a > b) {
-            System.out.println("hw1=============Ex6:\n" + a);
-        } else {
-            System.out.println("hw1=============Ex6:\n" + b);
-        }
-    }
-
-    public static void hw1Ex7() {
-        int progNumber = 32;
-        int endDigit = (progNumber % 10);
-        String strEnd = "";
-        String strPrint = progNumber + " программист";
-
-        if (endDigit > 1) {
-            strEnd = "а";
-        }
-
-        if (endDigit >= 5) {
-            strEnd = "ов";
-        }
-        System.out.println("hw1=============Ex7:\n" + strPrint + strEnd);
-    }
-
-    public static void homeWork1() {
-        hw1Ex1();
-        hw1Ex2();
-        hw1Ex3();
-        hw1Ex4();
-        hw1Ex5();
-        hw1Ex6();
-        hw1Ex7();
+    public static void hw3Person() {
+        System.out.println("hw3=============Person:");
+        Person ted = new Person();
+        ted.talk();
+        ted.move();
+        Person sam = new Person("Sam", 22);
+        sam.talk();
+        sam.move();
     }
 
     // =================================================================== HW2 ===
+
+    public static void homeWork2() {
+        hw2Ex1();
+        hw2Ex2();
+        hw2Ex3();
+        hw2Ex4(5);
+        hw2Ex5();
+        hw2Ex6();
+
+        hw2Ex6L();
+        hw2Ex7L();
+        hw2Ex5L();
+        hw2Ex4L();
+        hw2Ex3L();
+        hw2Ex2L();
+        hw2Ex1L();
+        hw2Ex8L();
+    }
 
     public static void hw2Ex1() {
         System.out.println("hw2=============Ex1:");
@@ -273,21 +225,126 @@ public class Main {
         }
     }
 
-    public static void homeWork2() {
-        hw2Ex1();
-        hw2Ex2();
-        hw2Ex3();
-        hw2Ex4(5);
-        hw2Ex5();
-        hw2Ex6();
+    // =================================================================== HW1 ===
 
-        hw2Ex6L();
-        hw2Ex7L();
-        hw2Ex5L();
-        hw2Ex4L();
-        hw2Ex3L();
-        hw2Ex2L();
-        hw2Ex1L();
-        hw2Ex8L();
+    public static void homeWork1() {
+        hw1Ex1();
+        hw1Ex2();
+        hw1Ex3();
+        hw1Ex4();
+        hw1Ex5();
+        hw1Ex6();
+        hw1Ex7();
+    }
+
+    public static void hw1Ex1() {
+        int myInt = 12312;
+        int count = String.valueOf(myInt).length();
+
+        if (myInt < 0) {
+            System.out.println("hw1=============Ex1:\n" + "This number has" + count + "digits and is negative");
+        } else {
+            System.out.println("hw1=============Ex1:\n" + "This number has " + count + " digits and is positive");
+        }
+    }
+
+    public static void hw1Ex2() {
+        int a = 0;
+        int b = 0;
+        int c = 0;
+
+        if ((a + b) > c) {
+            System.out.println("hw1=============Ex2:\n" + "Triangle exists");
+        } else if ((a + c) > b) {
+            System.out.println("hw1=============Ex2:\n" + "Triangle exists");
+        } else if ((b + c) > a) {
+            System.out.println("hw1=============Ex2:\n" + "Triangle exists");
+        } else {
+            System.out.println("hw1=============Ex2:\n" + "Triangle does not exist");
+        }
+    }
+
+    public static void hw1Ex3() {
+        int someInt = 2;
+
+        if (someInt > 0) {
+            someInt += 1;
+        } else if (someInt < 0) {
+            someInt -= 2;
+        } else if (someInt == 0) {
+            someInt = 10;
+        }
+        System.out.println("hw1=============Ex3:\n" + someInt);
+    }
+
+    public static void hw1Ex4() {
+        int a = -1;
+        int b = 0;
+        int c = 2;
+        int countPositiveNumbers = 0;
+
+        if (a >= 0) {
+            countPositiveNumbers += 1;
+        }
+        if (b >= 0) {
+            countPositiveNumbers += 1;
+        }
+        if (c >= 0) {
+            countPositiveNumbers += 1;
+        }
+        System.out.println("hw1=============Ex4:\n" + countPositiveNumbers);
+    }
+
+    public static void hw1Ex5() {
+        int a = -1;
+        int b = 0;
+        int c = 2;
+        int countPositiveNumbers = 0;
+        int countNegativeNumbers = 0;
+
+        if (a >= 0) {
+            countPositiveNumbers += 1;
+        } else {
+            countNegativeNumbers += 1;
+        }
+        if (b >= 0) {
+            countPositiveNumbers += 1;
+        } else {
+            countNegativeNumbers += 1;
+        }
+        if (c >= 0) {
+            countPositiveNumbers += 1;
+        } else {
+            countNegativeNumbers += 1;
+        }
+        System.out.println("hw1=============Ex5:\n" + "PositiveNumbersCount - " + countPositiveNumbers);
+        System.out.println("NegativeNumbersCount - " + countNegativeNumbers);
+    }
+
+    public static void hw1Ex6() {
+        int a = 1;
+        int b = 2;
+
+        if (a > b) {
+            System.out.println("hw1=============Ex6:\n" + a);
+        } else {
+            System.out.println("hw1=============Ex6:\n" + b);
+        }
+    }
+
+    public static void hw1Ex7() {
+        int progNumber = 32;
+        int endDigit = (progNumber % 10);
+        String strEnd = "";
+        String strPrint = progNumber + " программист";
+
+        if (endDigit > 1) {
+            strEnd = "а";
+        }
+
+        if (endDigit >= 5) {
+            strEnd = "ов";
+        }
+        System.out.println("hw1=============Ex7:\n" + strPrint + strEnd);
     }
 }
