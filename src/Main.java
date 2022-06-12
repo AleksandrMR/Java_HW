@@ -1,7 +1,4 @@
-import entity.Pair;
-import entity.Person;
-import entity.Phone;
-import entity.Student;
+import entity.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,13 +29,14 @@ public class Main {
 
     public static void hw3Calculator() {
         System.out.println("hw3=============Calculator:");
-        Phone myPhone = new Phone("iPhoneSE", "+375294570048");
-        myPhone.myCalculator.doAddition(2,2);
-        myPhone.myCalculator.doSubtraction(2,2);
-        myPhone.myCalculator.doMultiplication(2,2);
-        myPhone.myCalculator.doDivision(4,2);
-        myPhone.myCalculator.doNumberToPower(2,2);
-        myPhone.myCalculator.isEvenNumber(13);
+        Calculator newCalculator = new Calculator();
+        Phone myPhone = new Phone("iPhoneSE", "+375294570048", newCalculator);
+        newCalculator.doAddition(2,2);
+        newCalculator.doSubtraction(2,2);
+        newCalculator.doMultiplication(2,2);
+        newCalculator.doDivision(4,2);
+        newCalculator.doNumberToPower(2,2);
+        newCalculator.isEvenNumber(13);
     }
 
     public static void hw3Pair() {

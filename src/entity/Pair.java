@@ -14,18 +14,20 @@ public class Pair {
         System.out.println("a: " + a + ", b: " + b);
     }
 
-    public void sum() {
+    public int sum() {
         int mySum = a + b;
         System.out.println("Sum a + b = " + mySum);
+        return mySum;
     }
 
-    public void bestValue() {
-        String bigNumber;
+    public int bestValue() {
+        int bigNumber;
         if (a > b) {
-            bigNumber = "A";
+            bigNumber = a;
         } else {
-            bigNumber = "B";
+            bigNumber = b;
         }
         System.out.println("The biggest number of A and B is " + bigNumber);
+        return bigNumber;
     }
 }
