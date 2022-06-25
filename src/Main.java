@@ -1,10 +1,107 @@
 import entity.*;
 
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 //        homeWork1();
 //        homeWork2();
-        homeWork3();
+//        homeWork3();
+        homeWork4();
+    }
+
+    // =================================================================== HW4 ===
+
+    public static void homeWork4() {
+        hw4Ex1();
+        hw4Ex2();
+        hw4Ex3();
+        hw4Ex4();
+        hw4Ex5();
+        hw4Ex6();
+        hw4Ex7();
+    }
+
+    public static void hw4Ex7() {
+        String[] myStrings = {
+                "String Is",
+                "my String Is Long",
+                "Very Long",
+                "my String Is Very BLong",
+                "Is Long"};
+
+        int common = 0;
+        for (String s : myStrings) {
+            common += s.length();
+        }
+
+        int middle = common / myStrings.length;
+        StringBuilder strBuilder = new StringBuilder();
+        for (String s : myStrings) {
+            if (s.length() > middle) {
+                strBuilder.append(s);
+                System.out.println(strBuilder + " -> " + strBuilder.length());
+            }
+        }
+    }
+
+    public static void hw4Ex6() {
+        String[] myStrings = {
+                "String Is",
+                "my String Is Long",
+                "Very Long",
+                "my String Is Very BLong",
+                "Is Long"};
+        for (String line : myStrings) {
+            int words = line.split("\s+").length;
+            if (words >= 3 && words <= 5) {
+                System.out.println(line);
+            }
+        }
+    }
+
+    public static void hw4Ex5() {
+        String[] myStrings = {"вдв", "сад", "дед", "книга", "тащат"};
+        StringBuilder strBuilder = new StringBuilder();
+
+        for (String item : myStrings) {
+            StringBuffer revString = new StringBuffer(item).reverse();
+            String strRev = revString.toString();
+
+            if(item.equalsIgnoreCase(strRev)) {
+                strBuilder.append(item);
+                strBuilder.append(",");
+            }
+        }
+        System.out.println(strBuilder);
+    }
+
+    public static void hw4Ex4() {
+        String myString = "BLong";
+        char myChar0 = myString.charAt(0);
+        char myChar3 = myString.charAt(3);
+        System.out.println(myString.replace(myChar3, myChar0));
+    }
+
+    public static void hw4Ex3() {
+        String myString = "my AString Is Very BLong";
+        System.out.println(myString.substring(4,19));
+    }
+
+    public static void hw4Ex2() {
+        String myString = "my String Is Very Long";
+        System.out.println(myString.toLowerCase().replace(" ", "_"));
+    }
+
+    public static void hw4Ex1() {
+        String line1 = "Line1";
+        String line2 = "Line2";
+        String line3 = "Line3";
+
+        System.out.println(line1.toLowerCase());
+        System.out.println(line2.toUpperCase());
+        System.out.println(line3);
     }
 
     // =================================================================== HW3 ===
